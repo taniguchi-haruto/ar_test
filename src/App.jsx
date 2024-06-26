@@ -129,27 +129,22 @@
 
 import "aframe";
 import React from "react";
-import ReactDOM from "react-dom/client";
+// import ReactDOM from "react-dom/client";
 // import createRoot from "react-dom/client";
-import {
-  Box,
-  Sphere,
-  Cylinder,
-  Plane,
-  Sky,
-  Text,
-  Scene,
-} from "react-aframe-ar";
+// import { Box, Sphere, Cylinder, Plane, Sky, Text } from "react-aframe-ar";
 // const domNode = document.getElementById("root");
 // const root = createRoot(domNode);
 // console.log(root);
+import { Scene } from "aframe";
 class AppScene extends React.Component {
   render() {
     return (
       <>
-      <p>test</p>
-        <Scene>
-          <Box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow />
+        <p>test</p>
+        <a-entity camera look-controls position="0 1.6 0"></a-entity>
+        {/* <Scene>
+          <a-camera gps-camera rotation-reader> */}
+        {/* <Box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow />
           <Sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow />
           <Cylinder
             position="1 0.75 -3"
@@ -172,12 +167,18 @@ class AppScene extends React.Component {
             align="center"
             position="0 2.3 -1.5"
             color="#7BC8A4"
-          />
-        </Scene>
+          /> */}
+        <a-box
+          material="color: yellow"
+          gps-entity-place="latitude: 35.0; longitude: 139.50"
+          position="50 40 0"
+        />
+        {/* </a-camera>
+        </Scene> */}
       </>
     );
   }
 }
-export default AppScene
+export default AppScene;
 
 // root.render(<AppScene />, document.querySelector("#sceneContainer"));
